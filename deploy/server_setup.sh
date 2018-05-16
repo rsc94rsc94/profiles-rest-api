@@ -3,8 +3,8 @@
 # TODO: Set to URL of git repo.
 PROJECT_GIT_URL='https://github.com/rsc94rsc94/profiles-rest-api.git'
 
-PROJECT_BASE_PATH='/vagrant'
-VIRTUALENV_BASE_PATH='/vagrant'
+PROJECT_BASE_PATH='/usr/local/apps'
+VIRTUALENV_BASE_PATH='/usr/local/apps'
 
 # Set Ubuntu Language
 locale-gen en_GB.UTF-8
@@ -21,7 +21,7 @@ mkdir -p $PROJECT_BASE_PATH
 git clone $PROJECT_GIT_URL $PROJECT_BASE_PATH/profiles-rest-api
 
 mkdir -p $VIRTUALENV_BASE_PATH
-virtualenv  $VIRTUALENV_BASE_PATH/profiles_api
+python  -m venv  $VIRTUALENV_BASE_PATH/profiles_api
 
 source $VIRTUALENV_BASE_PATH/profiles_api/bin/activate
 pip install -r $PROJECT_BASE_PATH/profiles-rest-api/requirements.txt
