@@ -12,14 +12,14 @@ class UserProfileSerializer(serializers.ModelSerializer):
     """A serializer for our user profile object"""
 
     class Meta:
-        model =  models.UserPorfile
+        model =  models.UserProfile
         fields= ('id','email','name','password')
         extra_kwargs = {'password':{'write_only':True}}
 
     def create(self, validated_data):
         """Create and return new user"""
 
-        user = models.User(
+        user = models.UserProfile(
             email=validated_data['email'],
             name=validated_data['name']
         )

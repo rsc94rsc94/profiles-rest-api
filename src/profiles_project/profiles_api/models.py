@@ -39,7 +39,7 @@ class UserProfileManager(BaseUserManager):
 
 
 
-class  UserPorfile(AbstractBaseUser,PermissionsMixin):
+class  UserProfile(AbstractBaseUser,PermissionsMixin):
     """Represents a "user profile" in our system."""
 
     email = models.EmailField(max_length=255,unique=True)
